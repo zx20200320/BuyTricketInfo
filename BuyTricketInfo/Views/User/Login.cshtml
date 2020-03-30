@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+@using BuyTricketInfo.Models
+@model UserInfo
+<h2>Login</h2>
+@using (Html.BeginForm())
+{
+    <table class="table table-bordered table-hover">
+        <tr>
+            <td>用户名:</td>
+            <td>@Html.TextBoxFor(x=>x.UserName)</td>
+        </tr>
+        <tr>
+            <td>密码:</td>
+            <td>@Html.PasswordFor(x=>x.PassWard)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input id="Submit1" type="submit" value="登录" class="btn btn-default" /></td>
+        </tr>
+    </table>
+}
+

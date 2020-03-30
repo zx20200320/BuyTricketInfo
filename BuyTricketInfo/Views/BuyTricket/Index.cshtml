@@ -1,0 +1,75 @@
+﻿@model IEnumerable<BuyTricketInfo.Models.Tickets>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureStation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalStation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpenPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeatNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeatLevel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TicketPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsSaleOut)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartureStation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArrivalStation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpenPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeatNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeatLevel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TicketPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsSaleOut)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id },new { onclick="return confirm('确定删除吗？')"})
+        </td>
+    </tr>
+}
+
+</table>
